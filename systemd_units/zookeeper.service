@@ -5,7 +5,7 @@ After=syslog.target network.target
 [Service]
 Type=simple
 
-ExecStart=/local/s25staff/kafka/bin/zookeeper-server-start.sh /local/s25staff/kafka/config/zookeeper.properties
+ExecStart=/local/s25staff/kafka/bin/zookeeper-server-start.sh %h/src/queueserver/zookeeper.properties
 ExecStop=/local/s25staff/kafka/bin/zookeeper-server-stop.sh
 
 [Install]

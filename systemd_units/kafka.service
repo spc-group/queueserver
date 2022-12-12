@@ -6,7 +6,7 @@ After=zookeeper.service
 [Service]
 Type=simple
 
-ExecStart=/local/s25staff/kafka/bin/kafka-server-start.sh /local/s25staff/kafka/config/server.properties
+ExecStart=/local/s25staff/kafka/bin/kafka-server-start.sh %h/src/queueserver/kafka_server.properties
 ExecStop=/local/s25staff/kafka/bin/kafka-server-stop.sh
 
 [Install]
