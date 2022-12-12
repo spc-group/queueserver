@@ -1,6 +1,6 @@
 [Unit]
 Description=Redis persistent key-value database
-After=network.target
+After=syslog.target network.target
 
 [Service]
 ExecStart=/usr/bin/redis-server --supervised systemd
