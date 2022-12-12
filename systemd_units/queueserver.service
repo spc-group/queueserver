@@ -1,14 +1,12 @@
 [Unit]
-Description=Bluesky Queue Server
+Description=Bluesky Queue Server (25-ID-C)
 Wants=kafka.service
 After=kafka.service
-Wants=mongo_consumer.service
-After=mongo_consumer.service
 Requires=redis.service
 After=redis.service
 
 [Service]
-Environment="BLUESKY_DIR=%h/bluesky_25idc"
+Environment="BLUESKY_DIR=%h/bluesky"
 ExecStart=/bin/bash -l -c 'micromamba activate haven && %h/src/queueserver/queueserver.sh'
 
 [Install]

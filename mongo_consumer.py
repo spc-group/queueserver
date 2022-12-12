@@ -1,15 +1,23 @@
 from functools import partial
 import os
 
+# This environmental variable needs to be set before importing haven
+os.environ["HAVEN_CONFIG_FILES"] = f"{os.environ['BLUESKY_DIR']}/iconfig.toml"
+
 import msgpack
 import msgpack_numpy as mpn
-
 from bluesky_kafka import MongoConsumer
 
+import haven
 
 bootstrap_servers = "localhost:9092"
 
-mongo_uri = os.environ.get("BLUESKY_MONGO_URI")
+# Determine the mongo DB URI from the databroker/intake configuration
+catalog_name = haven.load_config()['database']['databroker']['catalog']
+catalog = haven.load_catalog(name=catalog_name)
+host, port = catalog._resource_collection.database.client.address
+mongo_uri = f"mongodb://{host}:{port}"
+
 if mongo_uri is None:
     raise AttributeError("Environment variable BLUESKY_MONGO_URI "
                          "must be set.")
