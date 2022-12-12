@@ -1,0 +1,12 @@
+[Unit]
+Description=zookeeper
+After=syslog.target network.target
+
+[Service]
+Type=simple
+
+ExecStart=/local/s25staff/kafka/bin/zookeeper-server-start.sh /local/s25staff/kafka/config/zookeeper.properties
+ExecStop=/local/s25staff/kafka/bin/zookeeper-server-stop.sh
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,8 @@
+[Unit]
+Description=consumer for saving bluesky documents to database via kafka
+
+[Service]
+ExecStart=/bin/bash -l -c 'micromamba activate haven && env python %h/src/queueserver/mongo_consumer.py'
+
+[Install]
+WantedBy=default.target
