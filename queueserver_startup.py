@@ -6,7 +6,7 @@ from haven.run_engine import RunEngine
 import databroker
 
 # Import plans
-from haven import energy_scan, xafs_scan, align_slits, knife_scan
+from haven import energy_scan, xafs_scan, align_slits, knife_scan, set_energy
 from bluesky.plans import scan, rel_scan, list_scan, rel_list_scan, count
 
 # Import devices
