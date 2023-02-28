@@ -6,8 +6,9 @@ from haven.run_engine import RunEngine
 import databroker
 
 # Import plans
-from haven import energy_scan, xafs_scan, align_slits, knife_scan, set_energy
+from haven import energy_scan, xafs_scan, align_slits, knife_scan, set_energy, auto_gain, calibrate_mono_gap, align_pitch2, recall_motor_position
 from bluesky.plans import scan, rel_scan, list_scan, rel_list_scan, count
+from bluesky.plan_stubs import sleep, pause
 
 # Import devices
 load_instrument()
