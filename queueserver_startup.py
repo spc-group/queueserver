@@ -2,7 +2,7 @@ import re
 
 from haven.instrument.load_instrument import load_instrument
 from haven import registry
-from haven.run_engine import RunEngine
+from haven.run_engine import run_engine
 import databroker
 
 # Import plans
@@ -17,4 +17,4 @@ for cpt in registry.components:
     # Add the device as a variable in module's globals
     globals()[name] = cpt
 
-RE = RunEngine(connect_databroker=False)
+RE = run_engine(connect_databroker=False)
