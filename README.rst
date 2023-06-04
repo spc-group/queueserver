@@ -42,6 +42,13 @@ installed in a micromamba environment named *haven*, and that this
 repository is cloned to ``~/src/queueserver``. **Modify the systemd
 unit files to use the correct environment and repository location.**
 
+The systemd unit files are also capable of **setting PVs based on the
+service's state**. For example, by uncommenting the lines
+``ExecStopPost=...`` and ``ExecStartPost=`` in each systemd unit file,
+EPICS PVs can be toggled when the units start and stop, possibly
+alerting staff or users that the queueserver pipeline is not
+functioning.
+
 Multiple QueueServers
 ---------------------
 
