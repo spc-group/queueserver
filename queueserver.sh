@@ -14,6 +14,7 @@ start-re-manager \
     --user-group-permissions ${THIS_DIR}/queueserver_user_group_permissions.yaml \
     --zmq-control-addr ${ZMQ_CONTROL_ADDR} \
     --zmq-info-addr ${ZMQ_INFO_ADDR} \
+    --redis-addr ${REDIS_ADDR} \
     --keep-re \
     --kafka-topic ${KAFKA_TOPIC} \
     --update-existing-plans-devices ENVIRONMENT_OPEN
