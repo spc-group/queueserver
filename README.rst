@@ -1,3 +1,8 @@
+.. warning::
+
+   This repository is deprecated, it's contents have been merged into
+   spc-group/haven/src/queueserver.
+
 Queueserver Configuration
 =========================
 
